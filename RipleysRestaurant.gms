@@ -55,7 +55,7 @@ rep(i,"bau") = X.l(i) ;
 * enable the switch and re-solve
 sw_combo = 1 ; 
 solve ripley using lp maximizing z ; 
-rep(i,"combo") = X.l(i) ; 
+rep(i,"combo") = X.l(i) + 0.000001; 
 
 sw_combo = 0 ; 
 
@@ -63,7 +63,7 @@ sw_combo = 0 ;
 c("hot_dogs") = 2 * c("hot_dogs") ; 
 h("hot_dogs") = 2 * h("hot_dogs") ; 
 solve ripley using lp maximizing z ; 
-rep(i,"hungry") = X.l(i) ; 
+rep(i,"hungry") = X.l(i) + 0.000001; 
 
 
 execute_unload 'alldata.gdx' ; 
